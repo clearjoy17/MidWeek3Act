@@ -1,0 +1,18 @@
+<div class="card" style="width: 50rem;">
+  <h3>Week 3 Activity</h3>
+  <ul class="list-group">
+
+<h4>List of Participants</h4>
+
+
+  <li *ngFor = "let participant of participants" class="list-group-item list-group-item-dark">
+      <div class="float-start">{{participant.name}} </div>
+      <div class="float-end bg-primary ">{{participant.age}} years old</div>
+  </li>
+  <div class="btn-group float-end" role="group" >
+      <button class="btn btn-danger" (click)="showMale()">Male</button>
+      <button  class="btn btn-warning " (click)="showFemale()">Female</button>
+      <button  class="btn btn-success" (click)="showAll()">All</button>
+  </div>
+</ul>
+</div>
