@@ -3,18 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ParticipantsComponent } from './participants/participants.component';
-import { ShowComponent } from './show/show.component';
+import { ParticipantsService } from './participants/participants.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ParticipantsComponent,
-    ShowComponent
+    ParticipantsComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    ParticipantsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

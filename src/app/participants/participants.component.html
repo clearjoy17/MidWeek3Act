@@ -1,18 +1,20 @@
-<div class="card" style="width: 50rem;">
-  <h3>Week 3 Activity</h3>
-  <ul class="list-group">
-
-<h4>List of Participants</h4>
-
-
-  <li *ngFor = "let participant of participants" class="list-group-item list-group-item-dark">
-      <div class="float-start">{{participant.name}} </div>
-      <div class="float-end bg-primary ">{{participant.age}} years old</div>
-  </li>
-  <div class="btn-group float-end" role="group" >
-      <button class="btn btn-danger" (click)="showMale()">Male</button>
-      <button  class="btn btn-warning " (click)="showFemale()">Female</button>
-      <button  class="btn btn-success" (click)="showAll()">All</button>
+<div class="card">
+  <div class="card-header bg-dark d-grid gap-2 d-md-flex">
+    <h4 class="text-white m-1">{{title}}</h4>
+    <div class="ms-auto">
+      <button class="btn btn-secondary btn-sm m-1" (click)="filterGender('Female')">Female</button>
+      <button class="btn btn-secondary btn-sm m-1" (click)="filterGender('Male')">Male</button>
+      <button class="btn btn-secondary btn-sm m-1" (click)="showAll()">All</button>
+    </div>
   </div>
-</ul>
+  <div class="card-body bg-warning">
+    <table class="table">
+        <tbody>
+          <tr *ngFor="let participant of display">
+              <td>{{participant.name}}</td>
+              <td class="text-center"><a href="#" class="btn btn-secondary text-white btn-sm">{{participant.age}} years old</a></td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
 </div>

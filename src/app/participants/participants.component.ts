@@ -1,31 +1,28 @@
 
-  import { ParticipantsService } from './../participants.service';
-  import { Component, OnInit } from '@angular/core';
+  import { Component } from '@angular/core';
+  import { ParticipantsService } from './participants.service';
 
   @Component({
     selector: 'participants',
     templateUrl: './participants.component.html',
     styleUrls: ['./participants.component.css']
   })
-  export class ParticipantsComponent  {
-    display;
+  export class ParticipantsComponent {
+
+    title = "List of Participants"
     participants;
+    display;
 
-    constructor(service:  ParticipantsService){
-      this.participants = service.getParticipants();
-      this.display = service.getParticipants();
+    constructor (service: ParticipantsService){
+      this.display = this.participants = service.getParticipants()
     }
-    showMale(){
-      this.display = this.participants;
-      this.display = this.participants.filter(participant => participant.gender === 'Male');
 
-    }
-    showFemale(){
-      this.display = this.participants;
-      this.display = this.participants.filter(participant => participant.gender === 'Female');
-    }
     showAll(){
-      this.display = this.participants;
+      this.display = this.participants
+    }
+
+    filterGender(gender: string){
+      this.display = this.participants.filter(participant => participant.gender === gender)
     }
 
   }
